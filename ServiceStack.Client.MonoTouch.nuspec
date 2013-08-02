@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>ServiceStack.Client.MonoTouch</id> 
+    <version>3.9.55</version> 
+    <title>MonoTouch Clients for ServiceStack client side libraries</title>
+    <authors>Geoffrey Huntley</authors> 
+    <owners>Geoffrey Huntley</owners>
+    <summary>Xamarin.iOS JSON, XML, JSV ServiceClients for ServiceStack web services</summary>
+    <description>AOT compiled release builds of the ServiceStack client side libraries. Provides generic JSON, XML and JSV Service Clients allowing you to call ServiceStack web services from a Xamarin.iOS (MonoTouch) client. 
+
+	Contains:
+	- ServiceStack.Text
+	- ServiceStack.Interfaces
+	- ServiceStack.Common
+
+	Due to MonoTouch's AOT compilation process, which relies on stripping code that is not linked directly, and ServiceStack.Text's serialization code which relies on reflection, every supported ServiceStack generic value type serializers have been explicitly preserved in these builds. This case cause large binaries to be produced, and sometimes can cause errors related to 'Could not AOT the assembly' when compiling to native code. This can potentially be resolved by explicitly including in SS.Text only the value types that your DTOs utilize, by commenting out unneeded types within the ServiceStack.Text.JsConfig.RegisterForAOT() method and rebuilding your own dlls.
+
+	See here for more details: https://bugzilla.xamarin.com/show_bug.cgi?id=9628
+    </description> 
+    <projectUrl>https://github.com/ghuntley/ServiceStack.Client.MonoTouch</projectUrl>
+    <licenseUrl>https://github.com/ServiceStack/ServiceStack/blob/master/LICENSE</licenseUrl>
+    <iconUrl>https://secure.gravatar.com/avatar/23d4d2451f74764e095f15a739b68a4e</iconUrl>
+    <tags>Xamarin iOS MonoTouch Fast JSON XML JSV REST Web Services</tags>
+    <language>en-US</language>
+	<copyright>servicestack.net 2012 and contributors</copyright>
+  </metadata>
+  	<files>			
+		<!-- touch -->
+		<file src="ServiceStack.Client.MonoTouch.v3.9.55\ServiceStack.Common.MonoTouch.dll" target="lib\MonoTouch40\ServiceStack.Common.MonoTouch.dll" />
+
+		<file src="ServiceStack.Client.MonoTouch.v3.9.55\ServiceStack.Interfaces.MonoTouch.dll" target="lib\MonoTouch40\ServiceStack.Interfaces.MonoTouch.dll" />
+
+		<file src="ServiceStack.Client.MonoTouch.v3.9.55\ServiceStack.Text.MonoTouch.dll" target="lib\MonoTouch40\ServiceStack.Text.MonoTouch.dll" />
+	</files> 
+</package>
